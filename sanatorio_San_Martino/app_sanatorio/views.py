@@ -1,5 +1,6 @@
 from django.shortcuts import render
 
-def Inicio(request):
+
+def inicio(request):
     return render(request,"app_sanatorio/base.html")
     
