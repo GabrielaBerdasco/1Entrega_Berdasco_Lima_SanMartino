@@ -1,0 +1,31 @@
+{% extends "app_sanatorio/base.html" %}
+
+{% block base %}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<table class="coder-table">
+  <tbody>
+    <tr>
+      <th>
+        <strong>Nombre</strong>
+      </th>
+      <th>
+        <strong>Apellido</strong>
+      </th>
+    </tr>    
+    {% for valor in medico %}
+    <tr>
+      <td>{{valor.nombre}}</td>
+      <td>{{valor.apellido}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock base %}
+

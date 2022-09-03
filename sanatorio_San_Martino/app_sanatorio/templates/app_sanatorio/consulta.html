@@ -1,0 +1,22 @@
+{% extends "app_sanatorio/base.html" %}
+
+{% block base %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<form action="{% url 'buscar' %}" method="GET">
+    {% csrf_token %}
+    <span>Especialidad:
+      <input type="text" name="especialidad">
+    </span>
+    <input type="submit" value="Buscar" />
+  </form>
+
+{% endblock base %}
+

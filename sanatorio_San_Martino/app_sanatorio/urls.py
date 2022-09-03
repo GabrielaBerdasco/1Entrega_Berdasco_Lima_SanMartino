@@ -1,10 +1,12 @@
 from django.urls import path
 from app_sanatorio import views
-from app_sanatorio.views import inicio
 
 
 
 urlpatterns = [
     path('',views.base),
-    path('inicio/', views.inicio, name = "inicio")
+    path('inicio/', views.inicio, name = "inicio"),
+    path('consulta/', views.busquedaEspecialidad, name= "consulta"),
+    path('buscar/', views.buscar, name = "buscar"),
+    path('medicos/', views.medicos_formulario, name = "medicos"),
 ]

@@ -1,0 +1,16 @@
+{% extends "app_sanatorio/base.html" %}
+
+{% block base %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<form method="post">
+    {% csrf_token %}
+    {{ formulario.as_p }}
+    <input type="submit" value="Enviar" />
+  </form>
+  
+{% endblock base %}
