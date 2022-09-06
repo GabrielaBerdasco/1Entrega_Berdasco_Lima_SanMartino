@@ -1,10 +1,9 @@
 # PROYECTO SANATORIO SAN MARTINO
 
-Proyecto desarrollado para el curso Python de CoderHouse, camada 41220. Tutor Esteban Acevedo
+Desarrollo para el curso de Python, institución CoderHouse, camada 41220. Tutor encargado: Esteban Acevedo.
 
 ![Demonstration web]
 
-Ver y probar app en []
 
 ## Sobre el proyecto
 
@@ -12,7 +11,8 @@ Proyecto elaborado sobre sanatorio ficticio para la consulta de médicos por esp
 
 ## Funcionalidad del proyecto
 
-El desarrollo 
+El proyecto se realizó con una plantilla obtenida de startBootstrap. Se comenzó el desarrollo en la plantilla base que contiene tanto nav como footer y una imagen acorde al tema de la página como fondo. Luego se desarrollo la vista de inicio donde agregamos distintos "call to action" para guiar al usuario de acuerdo a su búsqueda o necesidad. Dentro del nav se estableció qué al hacer click en el nombre del sanatorio, ubicado en la esquina superior izquierda, navegue hacia la página de inicio. El resto de los enlaces del nav se corresponden con la carga de datos en la db para cada uno de los modelos creados. Independientemente en la pantalla de inicio se encuentra un botón para la búsqueda de médicos por especialidad.
+
 
 ### Dependencias extras:
 
@@ -20,7 +20,7 @@ El desarrollo
 
 * Python-Dotenv: Se encarga de controlar todos los pares de key-values de un archivo que sea etiquetado como archivo de entorno o .env y, después, es el encargado de configurarlos como variables del entorno.
 
-* SQLite3: Se utilizó para almacenar colecciones de datos. La colección "médicos" se consume desde la app de acuerdo al pedido del usuario. Las tres colecciones almacenan los datos ingresados por el usuario.
+* SQLite3: Se utilizó para almacenar colecciones de datos. Las tres colecciones almacenan los datos ingresados por el usuario. Adicionalmente, la colección "médicos" se consume desde la app de acuerdo al pedido del usuario.
 
 ## Instrucciones para probar la app
 

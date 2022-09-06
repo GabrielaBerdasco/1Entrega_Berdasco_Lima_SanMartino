@@ -1,0 +1,11 @@
+{% extends "app_sanatorio/base.html" %}
+
+{% block base %}
+
+<form class="d-flex flex-column align-items-center p-5" method="post">
+    {% csrf_token %}
+    {{ formulario.as_p }}
+    <input class="btn btn-secondary" type="submit" value="Enviar" />
+  </form>
+  
+{% endblock base %}

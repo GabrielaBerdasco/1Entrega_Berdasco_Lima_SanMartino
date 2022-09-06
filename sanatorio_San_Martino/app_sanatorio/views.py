@@ -20,7 +20,7 @@ def crear_paciente(request) :
     else:  
             formulario= CrearPaciente()  
             
-    return render(request, "App_sanatorio/cargar_medico.html", {"formulario": formulario})
+    return render(request, "App_sanatorio/cargar_datos.html", {"formulario": formulario})
 
 
 def obras_sociales(request) :
@@ -33,10 +33,12 @@ def obras_formulario(request) :
             if formulario.is_valid():
                   data = formulario.cleaned_data
                   obra = ObrasSociales(nombre=data['nombre'], telefono=data['telefono'], email=data['email'])
+                  obra.save()
+
                   return render(request, "App_sanatorio/inicio.html", {"exitoso": True})
     else:  
             formulario= ObrasFormulario()  
-    return render(request, "App_sanatorio/obras_sociales.html", {"formulario": formulario})
+    return render(request, "App_sanatorio/cargar_datos.html", {"formulario": formulario})
 
 
 def busquedaEspecialidad(request) :
@@ -71,4 +73,4 @@ def medicos_formulario(request):
                   return render(request, "App_sanatorio/inicio.html", {"exitoso": True})
     else:  
             formulario= MedicoFormulario()  
-    return render(request, "App_sanatorio/cargar_medico.html", {"formulario": formulario})
+    return render(request, "App_sanatorio/cargar_datos.html", {"formulario": formulario})
