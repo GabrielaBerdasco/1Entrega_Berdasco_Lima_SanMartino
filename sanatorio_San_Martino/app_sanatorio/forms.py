@@ -17,3 +17,9 @@ class CrearPaciente(forms.Form):
     telefono = forms.IntegerField()
     email = forms.EmailField()
 
+class ObrasFormulario(forms.Form):
+    
+    nombre = forms.CharField(max_length=80)
+    telefono = forms.IntegerField()
+    email = forms.EmailField()
+    
