@@ -7,6 +7,9 @@ class Medico(models.Model):
     especialidad = models.CharField(max_length=80)
     email = models.EmailField()
 
+    def __str__(self) -> str :
+        return f'{self.nombre} {self.apellido}'
+
 
 class Paciente(models.Model):
     nombre = models.CharField(max_length=80)
@@ -16,8 +19,14 @@ class Paciente(models.Model):
     telefono = models.IntegerField()
     email = models.EmailField()
 
+    def __str__(self) -> str :
+        return f'{self.nombre} {self.apellido}'
+
 
 class ObrasSociales(models.Model):
     nombre = models.CharField(max_length=80)
     telefono = models.IntegerField()
     email = models.EmailField()
+
+    def __str__(self) -> str :
+        return f'{self.nombre}'
