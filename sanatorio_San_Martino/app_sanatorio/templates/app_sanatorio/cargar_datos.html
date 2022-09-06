@@ -2,10 +2,11 @@
 
 {% block base %}
 
-<form class="d-flex flex-column align-items-center p-5 m-5 text-light" method="post">
-    {% csrf_token %}
-    {{ formulario.as_p }}
-    <input class="btn btn-outline-light fw-bolder p-2 m-3" type="submit" value="Enviar" />
-  </form>
-  
+<div class="d-flex justify-content-center p-5 m-5">
+  <form class="d-flex flex-column align-items-end  text-light" method="post">
+      {% csrf_token %}
+      {{ formulario.as_p }}
+      <input class="btn btn-outline-light fw-bolder p-2 m-3" type="submit" value="Enviar" />
+    </form>
+</div>
 {% endblock base %}
