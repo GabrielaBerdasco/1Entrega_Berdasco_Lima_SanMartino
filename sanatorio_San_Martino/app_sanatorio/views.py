@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from app_sanatorio.models import Medico
-from app_sanatorio.forms import MedicoFormulario
+from app_sanatorio.models import Medico, Paciente
+from app_sanatorio.forms import MedicoFormulario, CrearPaciente
 
 
 def base(request) :
@@ -13,6 +13,19 @@ def inicio(request) :
 
 def pacientes(request) :
     return render(request, "app_sanatorio/pacientes.html")
+
+def crear_paciente(request) :
+    if request.method == 'POST':
+            formulario = CrearPaciente(request.POST)
+
+            if formulario.is_valid():
+                  data = formulario.cleaned_data
+                  paciente = Paciente(nombre=data['nombre'], apellido=data['apellido'], fecha_nacimiento=data['fecha_nacimiento'], ciudad=data['ciudad'], telefono=data['telefono'], email=data['email'])
+                  paciente.save()
+                  return render(request, "App_sanatorio/inicio.html", {"exitoso": True})
+    else:  
+            formulario= CrearPaciente()  
+    return render(request, "App_sanatorio/cargar_medico.html", {"formulario": formulario})
 
 
 def obras_sociales(request) :

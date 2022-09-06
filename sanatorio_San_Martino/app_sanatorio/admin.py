@@ -1,3 +1,6 @@
 from django.contrib import admin
+from app_sanatorio.models import Medico, Paciente, ObrasSociales
 
-# Register your models here.
+admin.site.register(Medico)
+admin.site.register(Paciente)
+admin.site.register(ObrasSociales)
