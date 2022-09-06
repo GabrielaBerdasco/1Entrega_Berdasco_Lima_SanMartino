@@ -2,9 +2,6 @@
 
 Desarrollo para el curso de Python, institución CoderHouse, camada 41220. Tutor encargado: Esteban Acevedo.
 
-![Demonstration web]
-
-
 ## Sobre el proyecto
 
 Proyecto elaborado sobre sanatorio ficticio para la consulta de médicos por especialidad y para la carga de datos de pacientes, médicos y obras sociales. Realizado en grupo por Francisco Lima, Gabriel San Martino y Gabriela Berdasco.

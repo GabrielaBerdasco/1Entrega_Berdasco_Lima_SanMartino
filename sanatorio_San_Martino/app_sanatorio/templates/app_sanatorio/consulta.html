@@ -10,12 +10,12 @@
 <br>
 <br>
 
-<form action="{% url 'buscar' %}" method="GET">
+<form class="d-flex flex-column align-items-center" action="{% url 'buscar' %}" method="GET">
     {% csrf_token %}
-    <span>Especialidad:
-      <input type="text" name="especialidad">
-    </span>
-    <input type="submit" value="Buscar" />
+    <label class="text-light p-3" for="especialidad">Especialidad: </label>
+    <input type="text" name="especialidad">
+    
+    <input class="btn btn-outline-light fw-bolder p-2 m-3" type="submit" value="Buscar" />
   </form>
 
 {% endblock base %}

@@ -2,30 +2,27 @@
 
 {% block base %}
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<table class="coder-table">
-  <tbody>
-    <tr>
-      <th>
-        <strong>Nombre</strong>
-      </th>
-      <th>
-        <strong>Apellido</strong>
-      </th>
-    </tr>    
-    {% for valor in medico %}
-    <tr>
-      <td>{{valor.nombre}}</td>
-      <td>{{valor.apellido}}</td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
+<div class="m-5">
+  <table class="table table-bordered text-light m-5 d-flex justify-content-around p-5">
+    <tbody>
+      <tr>
+        <th class="py-3 px-4">
+          <strong>Nombre</strong>
+        </th>
+        <th class="py-3 px-4">
+          <strong>Apellido</strong>
+        </th>
+      </tr>    
+      {% for valor in medico %}
+      <tr>
+        <td class="py-3 px-4">{{valor.nombre}}</td>
+        <td class="py-3 px-4">{{valor.apellido}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</div>
 
 {% endblock base %}
 
