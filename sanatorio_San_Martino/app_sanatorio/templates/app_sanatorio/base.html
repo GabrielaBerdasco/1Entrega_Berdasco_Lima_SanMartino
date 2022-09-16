@@ -29,15 +29,31 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="{% url 'medicos' %}">Médicos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'pacientes' %}">Pacientes</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'obrasSociales' %}">Obras Sociales</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Sobre nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Médicos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'registro' %}"><button type="button" class="btn btn-outline-light p-2 mt-0">Registrarse</button></a></li>
+                        <!-- {% if user %}
+                        <li class="nav-item"><div class="dropdown">
+                            <button class="btn btn-outline-light dropdown-toggle p-2 mt-4" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Mi perfil
+                            </button>
+                            <ul class="dropdown-menu">
+                              <li><img src="#" alt="Imagen"></li>
+                              <li><a class="dropdown-item" href="#">Ver Perfil</a></li>
+                              <li><a class="dropdown-item" href="#">Salir</a></li>
+                            </ul>
+                          </div></li>
+                          {% else %} -->
+                          <!-- {% endif %} -->
                     </ul>
                 </div>
             </div>
         </nav>
         <!-- Masthead-->
         <header class="masthead p-4">
+            {% if mensaje %}
+            <h2 class="fst-italic text-light text-center bg-danger fs-3 mt-5">{{mensaje}}</h2>
+            {% endif %}
 
             {% block base %}
             {% endblock base %}
