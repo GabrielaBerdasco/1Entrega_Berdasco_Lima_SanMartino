@@ -6,6 +6,8 @@ from app_sanatorio.models import Medico
 def inicio(request) :
     return render(request, "app_sanatorio/inicio.html")
 
+def nosotros(request) :
+    return render(request, "app_sanatorio/nosotros.html")
 
 def busquedaEspecialidad(request) :
     return render(request, "app_sanatorio/consulta.html")

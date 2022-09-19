@@ -1,0 +1,38 @@
+{% extends "app_sanatorio/base.html" %}
+
+{% block base %}
+
+<h1 class="fs-1 mt-5 p-5 text-center">CONOCE MÁS SOBRE LOS CREADORES DEL SITIO</h1>
+
+{% endblock base %}
+
+{% block nosotros %}
+
+<section class="p-1 d-flex flex-column text-light about-section text-center" id="about">
+    <article class="d-flex flex-row m-5">
+        <img src="../../static/app_sanatorio/assets/img/ejemplo.jpg" class="rounded" alt="Imagen ejemplo">
+        <div class="flex-fill p-5">
+            <h2 class="fw-bold"><em>Gabriel San Martino</em></h2>
+            <p>Descripción</p>
+            <a href="https://github.com/gabrielsanmartino"><input class="btn btn-outline-light fw-bolder p-2 m-3" type="submit" value="Ir a perfil de GitHub"/></a>
+        </div>
+    </article>
+    <article class="d-flex flex-row m-5">
+        <img src="../../static/app_sanatorio/assets/img/ejemplo.jpg" class="rounded" alt="Imagen ejemplo">
+        <div class="flex-fill p-5">
+            <h2 class="fw-bold"><em>Francisco Lima</em></h2>
+            <p>Descripción</p>
+            <a href="https://github.com/franciscolima05"><input class="btn btn-outline-light fw-bolder p-2 m-3" type="submit" value="Ir a perfil de GitHub"/></a>
+        </div>
+    </article>
+    <article class="d-flex flex-row m-5">
+        <img src="../../static/app_sanatorio/assets/img/ejemplo.jpg" class="rounded" alt="Imagen ejemplo">
+        <div class="flex-fill p-5">
+            <h2 class="fw-bold"><em>Gabriela Berdasco</em></h2>
+            <p>Desarrolladora Frontend React, carrera finalizada en CoderHouse con conocimientos de JavaScript, React Native, Python y Django. Actualmente cursando especilización en Supervised Machine Learning a través de Coursera</p>
+            <a href="https://github.com/GabrielaBerdasco"><input class="btn btn-outline-light fw-bolder p-2 m-3" type="submit" value="Ir a perfil de GitHub"/></a>
+        </div>
+    </article>
+</section>
+
+{% endblock nosotros %}
