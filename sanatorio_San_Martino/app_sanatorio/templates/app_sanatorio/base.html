@@ -31,7 +31,7 @@
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="{% url 'nosotros' %}">Sobre nosotros</a></li>
                         {%if user.is_staff %}
-                            <li class="nav-item"><a class="nav-link" href="#">Médicos</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'crear_blog' %}">Médicos</a></li>
                         {%endif%}
                         <!-- <li class="nav-item"><a class="nav-link" href="{% url 'registro' %}"><button type="button" class="btn btn-outline-light p-2 mt-0">Registrarse</button></a></li> -->
                         {% if user.is_authenticated %}

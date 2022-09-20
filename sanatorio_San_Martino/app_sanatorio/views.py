@@ -1,5 +1,9 @@
 from django.shortcuts import render
 from app_sanatorio.models import Medico
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from app_sanatorio.models import Blog
+from django.urls import reverse, reverse_lazy
+
 
 
 
@@ -24,3 +28,10 @@ def buscar(request) :
     else:
 
         return render(request, "app_sanatorio/consulta.html", {"medico": []})
+
+
+
+class BlogCreateView(CreateView):
+    model = Blog
+    fields = ["titulo", "subtitulo", "autor", "cuerpo", "fecha", "imagen"]
+    success_url = reverse_lazy('inicio')

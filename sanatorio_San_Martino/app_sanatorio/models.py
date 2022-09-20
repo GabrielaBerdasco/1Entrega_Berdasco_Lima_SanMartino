@@ -12,3 +12,14 @@ class Medico(models.Model):
             return f'{self.nombre} {self.apellido}'
 
 
+class Blog(models.Model):
+    titulo = models.CharField(max_length=80)
+    subtitulo = models.CharField(max_length=80)
+    autor = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
+    cuerpo = models.TextField()
+    fecha = models.DateField()
+    imagen =  models.ImageField(upload_to='imagenes', null=True, blank = True)
+
+
+
+
