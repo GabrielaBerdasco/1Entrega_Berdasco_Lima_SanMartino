@@ -30,23 +30,28 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="{% url 'nosotros' %}">Sobre nosotros</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Médicos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">login</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">logout</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'registro' %}"><button type="button" class="btn btn-outline-light p-2 mt-0">Registrarse</button></a></li>
-                        <!-- {% if user %}
-                        <li class="nav-item"><div class="dropdown">
-                            <button class="btn btn-outline-light dropdown-toggle p-2 mt-4" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              Mi perfil
-                            </button>
-                            <ul class="dropdown-menu">
-                              <li><img src="#" alt="Imagen"></li>
-                              <li><a class="dropdown-item" href="#">Ver Perfil</a></li>
-                              <li><a class="dropdown-item" href="#">Salir</a></li>
-                            </ul>
-                          </div></li>
-                          {% else %} -->
-                          <!-- {% endif %} -->
+                        {%if user.is_staff %}
+                            <li class="nav-item"><a class="nav-link" href="#">Médicos</a></li>
+                        {%endif%}
+                        <!-- <li class="nav-item"><a class="nav-link" href="{% url 'registro' %}"><button type="button" class="btn btn-outline-light p-2 mt-0">Registrarse</button></a></li> -->
+                        {% if user.is_authenticated %}
+                            <li class="nav-item"><div class="dropdown">
+                                <button class="btn btn-outline-light dropdown-toggle p-2 mt-4" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Mi perfil
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><img src="../../static/app_sanatorio/assets/img/ejemplo.jpg" class="rounded-circle" alt="Imagen ejemplo" style="width: 60px; height: 60px;"></li>
+                                    <li><a class="dropdown-item" href="#">Ver Perfil</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'logout' %}">Salir</a></li>
+                                </ul>
+                            </div></li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'login' %}">
+                                    <button type="button" class="btn btn-outline-light p-2 mt-0">Iniciar sesión</button>
+                                </a>
+                            </li>   
+                        {% endif %}
                     </ul>
                 </div>
             </div>

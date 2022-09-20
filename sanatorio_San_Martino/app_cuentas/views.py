@@ -1,12 +1,10 @@
-from django.shortcuts import render
-from app_cuentas.forms import UserRegisterForm
-from django.contrib.auth import login, authenticate
-from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import render, redirect
+from django.contrib.auth import login, authenticate
 from django.urls import reverse, reverse_lazy
+from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.views import LogoutView
-from django.contrib.auth.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin
+from app_cuentas.forms import UserRegisterForm
 
 
 def register(request):
@@ -47,7 +45,7 @@ def login_request(request):
             return render(request,"app_sanatorio/inicio.html", {"mensaje":"Error, formulario erroneo"})
 
     form = AuthenticationForm()
-    return render(request,"app_cuentas/registro.html", {'form':form} )
+    return render(request,"app_cuentas/login.html", {'form':form} )
 
 
 class CustomLogoutView(LoginRequiredMixin, LogoutView):

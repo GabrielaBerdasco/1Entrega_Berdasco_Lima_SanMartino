@@ -24,21 +24,3 @@ def buscar(request) :
     else:
 
         return render(request, "app_sanatorio/consulta.html", {"medico": []})
-
-""" def register(request):
-    mensaje = ''
-    if request.method == 'POST':
-        form = UserRegisterForm(request.POST)
-
-        if form.is_valid():
-            form.save()
-            return render(request, "app_sanatorio/inicio.html", {"mensaje": "Usuario Creado :)"})
-        else:
-            mensaje = 'Cometiste un error en el registro'
-    formulario = UserRegisterForm()  # Formulario vacio para construir el html
-    context = {
-        'form': formulario,
-        'mensaje': mensaje
-    }
-
-    return render(request, "app_sanatorio/registro.html", context=context) """
