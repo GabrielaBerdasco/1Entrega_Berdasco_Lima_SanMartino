@@ -1,5 +1,13 @@
 from django.shortcuts import render
 from app_cuentas.forms import UserRegisterForm
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.forms import AuthenticationForm
+from django.shortcuts import render, redirect
+from django.urls import reverse, reverse_lazy
+from django.contrib.auth.views import LogoutView
+from django.contrib.auth.models import User
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 
 def register(request):
     mensaje = ''
@@ -18,4 +26,31 @@ def register(request):
     }
 
     return render(request, "app_cuentas/registro.html", context=context)
+
+
+def login_request(request):
+    next_url = request.GET.get('next')
+    if request.method == "POST":
+        form = AuthenticationForm(request, data = request.POST)
+        if form.is_valid():
+            usuario = form.cleaned_data.get('username')
+            contra = form.cleaned_data.get('password')
+            user = authenticate(username=usuario, password=contra)
+            if user:
+                login(request=request, user=user)
+                if next_url:
+                    return redirect(next_url)
+                return render(request, "app_sanatorio/inicio.html", {"mensaje":f"Bienvenido {usuario}"})
+            else:
+                return render(request,"app_sanatorio/inicio.html", {"mensaje":"Error, datos incorrectos"})
+        else:
+            return render(request,"app_sanatorio/inicio.html", {"mensaje":"Error, formulario erroneo"})
+
+    form = AuthenticationForm()
+    return render(request,"app_cuentas/registro.html", {'form':form} )
+
+
+class CustomLogoutView(LoginRequiredMixin, LogoutView):
+    template_name = 'app_cuentas\logout.html'
+    #next_page = reverse_lazy('inicio')
 
