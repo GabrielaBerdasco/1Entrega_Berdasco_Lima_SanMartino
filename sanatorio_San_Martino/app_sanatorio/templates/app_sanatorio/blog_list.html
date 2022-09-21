@@ -1,0 +1,26 @@
+{% extends "app_sanatorio/base.html" %}
+
+{% block section %}
+
+<section class="p-1 d-flex flex-column text-light about-section text-center" id="about">
+    
+    {% if object_list %}
+        {% for articulo in object_list %}
+            <article>
+                <img src="{{ articulo.imagen.url }}" alt="imagen">
+                <p>{{articulo.imagen.url}}</p>
+                <h2>{{ articulo.titulo  }}</h2>
+                <h4>{{ articulo.subtitulo }}</h4>
+                <p>{{ articulo.cuerpo }}</p>
+                <h5>{{ articulo.autor }} - {{ articulo.fecha }}</h5>
+            </article>
+        {% endfor %}
+    
+    {% else %}
+            <h3>No hay entradas en el blog.</h3>
+    {% endif %}
+    
+
+</section>
+
+{% endblock section %}

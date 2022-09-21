@@ -18,7 +18,7 @@ class Blog(models.Model):
     autor = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     cuerpo = models.TextField()
     fecha = models.DateField()
-    imagen =  models.ImageField(upload_to='imagenes', null=True, blank = True)
+    imagen =  models.ImageField(upload_to='imagenes', null=True, blank=True)
 
 
 
