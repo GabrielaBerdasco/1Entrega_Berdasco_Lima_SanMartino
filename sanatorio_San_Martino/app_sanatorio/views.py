@@ -41,3 +41,9 @@ class BlogCreateView(CreateView):
 class BlogListView(ListView) :
     model = Blog
     template_name = "app_sanatorio/blog_list.html"
+
+
+def ver_articulo(request, id):
+    articulo = Blog.objects.get(id=id)
+    
+    return render(request, "app_sanatorio/articulo.html")

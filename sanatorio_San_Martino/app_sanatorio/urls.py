@@ -12,4 +12,5 @@ urlpatterns = [
     path('crear-blog/', views.BlogCreateView.as_view(), name="crear_blog"),
     path('page/', views.BlogListView.as_view(), name = "listar_blog"),
     path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('page/page<int:id>/', views.ver_articulo, name="ver_articulo"),
 ]
