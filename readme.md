@@ -8,7 +8,7 @@ Proyecto elaborado sobre sanatorio ficticio para la consulta de médicos por esp
 
 ## Funcionalidad del proyecto
 
-El proyecto se realizó con una plantilla obtenida de startBootstrap. Se comenzó el desarrollo en la plantilla base que contiene tanto nav como footer y una imagen acorde al tema de la página como fondo. Luego se desarrollo la vista de inicio donde agregamos distintos "call to action" para guiar al usuario de acuerdo a su búsqueda o necesidad. Dentro del nav se estableció qué al hacer click en el nombre del sanatorio, ubicado en la esquina superior izquierda, navegue hacia la página de inicio. El resto de los enlaces del nav se corresponden con la carga de datos en la db para cada uno de los modelos creados. Independientemente en la pantalla de inicio se encuentra un botón para la búsqueda de médicos por especialidad.
+El proyecto se realizó con Python versión 3.10.6, en base a una plantilla obtenida de startBootstrap. Se comenzó el desarrollo en la plantilla base que contiene tanto nav como footer y una imagen acorde al tema de la página como fondo. Luego se desarrollo la vista de inicio donde agregamos distintos "call to action" para guiar al usuario de acuerdo a su búsqueda o necesidad. Dentro del nav se estableció qué al hacer click en el nombre del sanatorio, ubicado en la esquina superior izquierda, navegue hacia la página de inicio. El resto de los enlaces del nav se corresponden con la carga de datos en la db para cada uno de los modelos creados. Independientemente en la pantalla de inicio se encuentra un botón para la búsqueda de médicos por especialidad.
 
 
 ### Dependencias extras:
