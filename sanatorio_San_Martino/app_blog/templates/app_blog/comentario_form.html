@@ -1,0 +1,28 @@
+{% extends "app_sanatorio/base.html" %}
+
+{% block base %}
+
+<h1 class="fs-1 mt-5 p-5 text-center">COMENTARIO EN ARTICULO:</h1>
+<h1 class="fs-2 mt-2 p-1 text-center text-light">{{ articulo.titulo }}</h1>
+
+{% endblock base %}
+
+{% block section %}
+
+<section class="p-1 d-flex flex-column text-light about-section text-center" id="about">
+    {% if user.is_authenticated %}
+        <div class="d-flex justify-content-center p-5 m-5">
+            <form class="d-flex flex-column align-items-end text-light" method="post">
+                {% csrf_token %}
+                {{ formulario.media }}
+                {{ formulario.as_p }}
+                <input class="btn btn-outline-light fw-bolder p-2 m-3" type="submit" value="Enviar" />
+            </form>
+            
+        </div>
+    {% else %}
+        <h3>Para comentar debes iniciar sesión.</h3>
+    {% endif %}
+</section>
+
+{% endblock section %}

@@ -1,7 +1,13 @@
 {% extends "app_sanatorio/base.html" %}
 
-
-
 {% block base %}
-<h3>Has cerrado sesion</h3>
+
+<div class="d-flex flex-column align-items-center  text-light">
+    <h1 class="fs-1 mt-5 p-5">Has cerrado sesión</h1>
+    <h1 class="fs-2 mt-2 p-1">Gracias por tu visita!</h1>
+    <a href="{% url 'inicio' %}">
+        <button class="btn btn-outline-light p-2 mt-4 align-items-center">Volver a inicio</button>
+    </a>
+</div>
+
 {% endblock base %}

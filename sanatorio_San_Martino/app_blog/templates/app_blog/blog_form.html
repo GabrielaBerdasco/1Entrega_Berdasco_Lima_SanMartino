@@ -1,0 +1,25 @@
+{% extends "app_sanatorio/base.html" %}
+
+{% block base %}
+
+<h1 class="fs-1 mt-5 p-5 text-center">BLOG</h1>
+<h1 class="fs-2 mt-2 p-1 text-center text-light">Crear nueva entrada de blog.</h1>
+
+{% endblock base %}
+
+{% block section %}
+
+<section class="d-flex flex-column text-light about-section text-center p-1" id="about">
+
+    <div class="d-flex justify-content-center">
+        <form class="d-flex flex-column align-items-end  text-light" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.media }}
+            {{ form.as_p }}
+            <input class="btn btn-outline-light fw-bolder p-2 m-3" type="submit" value="Enviar" />
+        </form>
+    </div>
+
+</section>
+
+{% endblock section %}

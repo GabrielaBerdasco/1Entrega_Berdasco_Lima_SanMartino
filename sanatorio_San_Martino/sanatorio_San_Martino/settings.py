@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app_sanatorio',
     'app_cuentas',
+    'app_blog',
     'ckeditor',
     'ckeditor_uploader',
 ]

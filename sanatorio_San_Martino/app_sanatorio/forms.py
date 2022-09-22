@@ -7,4 +7,3 @@ class MedicoFormulario(forms.Form):
     apellido = forms.CharField(max_length=80)
     especialidad = forms.CharField(max_length=80)
     email = forms.EmailField()
-
