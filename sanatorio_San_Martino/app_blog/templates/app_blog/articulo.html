@@ -22,7 +22,12 @@
         <div>
             <p>{{comentario.cuerpo}}</p>
             <h5>{{comentario.autor}} - {{comentario.fecha}}</h5>
+
+            {% if user == comentario.autor %}
+
             <a href="{% url 'eliminar_comentario' comentario.id %}">Eliminar</a>
+            
+            {% endif %}
         </div>
         {% endfor %}
 
