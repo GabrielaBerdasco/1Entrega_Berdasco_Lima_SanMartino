@@ -40,7 +40,7 @@
                                     Mi perfil
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><img src="../../static/app_sanatorio/assets/img/ejemplo.jpg" class="rounded-circle" alt="Imagen ejemplo" style="width: 60px; height: 60px;"></li>
+                                    <li><a href="{% url 'avatar' %}"><img src="{{ avatar.imagen.url }}" class="rounded-circle" alt="Imagen ejemplo" style="width: 60px; height: 60px;"></a></li>
                                     <li><a class="dropdown-item" href="{% url 'update_profile' %}">Ver Perfil</a></li>
                                     <li><a class="dropdown-item" href="{% url 'logout' %}">Salir</a></li>
                                 </ul>

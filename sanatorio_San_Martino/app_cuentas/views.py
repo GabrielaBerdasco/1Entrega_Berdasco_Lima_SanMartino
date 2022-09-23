@@ -5,7 +5,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.views import LogoutView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-from app_cuentas.forms import UserRegisterForm, UserUpdateForm
+from app_cuentas.forms import UserRegisterForm, UserUpdateForm, AvatarFormulario
 
 
 def register(request):
@@ -82,3 +82,21 @@ def editar_perfil(request):
             "value": "Confirmar cambios"
         }
     return render(request, "app_cuentas/registro.html", contexto)
+
+
+def avatar_perfil(request):
+    
+    if request.method == 'POST':
+        form = AvatarFormulario(request.POST, request.FILES)
+
+        if form.is_valid:
+            avatar = form.save()
+            avatar.user = request.user
+            avatar.save()
+
+            return redirect(reverse('inicio'))
+    else:
+        
+        form = AvatarFormulario()
+
+        return render(request, "app_cuentas/form_avatar.html", {"form":form})
