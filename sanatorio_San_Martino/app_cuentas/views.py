@@ -5,7 +5,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.views import LogoutView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-from app_cuentas.forms import UserRegisterForm
+from app_cuentas.forms import UserRegisterForm, UserUpdateForm
 
 
 def register(request):
@@ -18,10 +18,11 @@ def register(request):
             return render(request, "app_sanatorio/inicio.html", {"mensaje": "Usuario Creado :)"})
         else:
             mensaje = 'Cometiste un error en el registro'
-    formulario = UserRegisterForm()  # Formulario vacio para construir el html
+    formulario = UserRegisterForm()
     context = {
         'form': formulario,
-        'mensaje': mensaje
+        'mensaje': mensaje,
+        'value': 'Registrarse'
     }
 
     return render(request, "app_cuentas/registro.html", context=context)
@@ -52,3 +53,32 @@ def login_request(request):
 class CustomLogoutView(LoginRequiredMixin, LogoutView):
     template_name = 'app_cuentas\logout.html'
 
+
+def editar_perfil(request):
+    usuario = request.user
+
+    if request.method == 'POST':
+        form = UserUpdateForm(request.POST)
+
+        if form.is_valid():
+            data = form.cleaned_data
+
+            usuario.last_name = data['last_name']
+            usuario.first_name = data['first_name']
+            usuario.email = data['email']
+
+            usuario.save()
+
+            return redirect(reverse('inicio'))
+    else:  
+        inicial = {
+            'last_name': usuario.last_name,
+            'first_name': usuario.first_name,
+            'email': usuario.email,
+        }
+        form = UserUpdateForm(initial=inicial)
+        contexto = {
+            "form": form,
+            "value": "Confirmar cambios"
+        }
+    return render(request, "app_cuentas/registro.html", contexto)
