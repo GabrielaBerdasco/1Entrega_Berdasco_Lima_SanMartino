@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse, reverse_lazy
-from datetime import date
+
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 
 from app_blog.models import Blog, Comentario
-from app_blog.forms import ComentarioFormulario
+from app_blog.forms import ComentarioFormulario, BlogUpdateForm
 
 
 
@@ -17,10 +18,22 @@ class BlogCreateView(CreateView):
         form.instance.autor = self.request.user
         return super().form_valid(form)
 
-
 class BlogListView(ListView) :
     model = Blog
     template_name = "app_blog/blog_list.html"
+
+
+class BlogUpdateView(LoginRequiredMixin, UpdateView):
+    model = Blog
+    form_class = BlogUpdateForm
+    success_url = reverse_lazy('listar_blog')
+    template_name = 'app_blog/blog_form.html'
+
+    
+class BlogDeleteView(DeleteView):
+    model = Blog
+    success_url = reverse_lazy('listar_blog')
+    
 
 
 def ver_articulo(request, id):
@@ -59,5 +72,10 @@ def comentario_form(request, id) :
         }
 
     return render(request, "app_blog/comentario_form.html", contexto)
+
+
+class ComentarioDeleteView(DeleteView):
+    model = Comentario
+    success_url = reverse_lazy('listar_blog')
 
 #editar comentario, eliminar comentario

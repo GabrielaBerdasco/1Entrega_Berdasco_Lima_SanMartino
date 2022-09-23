@@ -1,0 +1,20 @@
+{% extends "app_sanatorio/base.html" %}
+
+{% block base %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<span>Vas a eliminar a {{object}}</span>
+
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Confirmar" />
+</form>
+
+{% endblock base %}
+
