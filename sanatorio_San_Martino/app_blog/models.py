@@ -21,4 +21,4 @@ class Comentario(models.Model):
     fecha = models.DateField(auto_now=True)
 
     def __str__(self) -> str :
-            return f'Comentario por : {self.autor}'
+            return f'Comentario de: {self.autor}'

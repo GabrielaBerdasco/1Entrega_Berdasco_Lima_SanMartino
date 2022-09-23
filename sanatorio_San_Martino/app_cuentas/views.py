@@ -4,6 +4,7 @@ from django.urls import reverse, reverse_lazy
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.views import LogoutView
 from django.contrib.auth.mixins import LoginRequiredMixin
+
 from app_cuentas.forms import UserRegisterForm
 
 
@@ -50,5 +51,4 @@ def login_request(request):
 
 class CustomLogoutView(LoginRequiredMixin, LogoutView):
     template_name = 'app_cuentas\logout.html'
-    #next_page = reverse_lazy('inicio')
 

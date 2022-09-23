@@ -33,6 +33,7 @@ class BlogUpdateView(LoginRequiredMixin, UpdateView):
 class BlogDeleteView(DeleteView):
     model = Blog
     success_url = reverse_lazy('listar_blog')
+    template_name = 'app_blog/confirm_delete.html'
     
 
 
@@ -47,8 +48,6 @@ def ver_articulo(request, id):
 
     return render(request, "app_blog/articulo.html", contexto)
 
-
-#editar articulo, eliminar articulo
     
 def comentario_form(request, id) :
     
@@ -77,5 +76,4 @@ def comentario_form(request, id) :
 class ComentarioDeleteView(DeleteView):
     model = Comentario
     success_url = reverse_lazy('listar_blog')
-
-#editar comentario, eliminar comentario
+    template_name = 'app_blog/confirm_delete.html'

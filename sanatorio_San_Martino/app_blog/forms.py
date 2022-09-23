@@ -1,4 +1,5 @@
 from django import forms
+
 from app_blog.models import Comentario, Blog
 
 class ComentarioFormulario(forms.ModelForm):
