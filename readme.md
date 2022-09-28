@@ -9,7 +9,9 @@ Proyecto elaborado sobre sanatorio ficticio para la consulta de médicos por esp
 
 Realizado en grupo por:
 > Francisco Lima que se encargó de migrar las bases de datos, modificó template base - views - url, creó el modelo blog, carpeta media, views -  url de artículo e implementó los test unitarios.
+
 > Gabriel San Martino fue responsable de crear la app sanatorio, el template base, login y logout, también de implementar ckeditor, agregar view - urls- template para editar y eliminar entradas del blog y los comentarios.
+
 > Gabriela Berdasco fue la encargada de iniciar el proyecto junto con el readme, crear app cuentas y app blog, agregar view - url - template para cargar avatar y editar perfil, también de adaptar el front.
 
 Cabe destacar que el proyecto fue realizado en varias reuniones de meet grupales en donde todos los miembros participaron activamente aportando conocimientos adquiridos en el curso y por medio de investigación independiente.
