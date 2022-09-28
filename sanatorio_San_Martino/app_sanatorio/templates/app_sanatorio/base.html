@@ -42,7 +42,11 @@
                                     Mi perfil
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li class="p-1"><a href="{% url 'avatar' %}"><img src="{{ user.avatar.imagen.url }}" class="rounded-circle" alt="Imagen ejemplo" style="width: 60px; height: 60px;"></a></li>
+                                    {% if user.avatar.imagen %}
+                                        <li class="p-1"><a href="{% url 'delete_avatar' %}"><img src="{{ user.avatar.imagen.url }}" class="rounded-circle" alt="Imagen ejemplo" style="width: 60px; height: 60px;"></a></li>
+                                    {% else %}
+                                    <li class="p-1"><a href="{% url 'avatar' %}"><img src="../../static/app_sanatorio/assets/img/ejemplo.jpg" class="rounded-circle" alt="Imagen ejemplo" style="width: 60px; height: 60px;"></a></li>
+                                    {% endif %}
                                     <li><a class="dropdown-item" href="{% url 'update_profile' %}">Ver Perfil</a></li>
                                     <li><a class="dropdown-item" href="{% url 'logout' %}">Salir</a></li>
                                 </ul>

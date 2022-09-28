@@ -11,7 +11,8 @@ urlpatterns = [
     path('login/', views.login_request, name = 'login'),
     path('logout/', views.CustomLogoutView.as_view(), name = 'logout'),
     path('update-profile', views.editar_perfil, name = 'update_profile'),
-    path('avatar', views.avatar_perfil, name = 'avatar')
+    path('avatar', views.avatar_perfil, name = 'avatar'),
+    path('delete-avatar', views.avatar_eliminar, name = 'delete_avatar')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

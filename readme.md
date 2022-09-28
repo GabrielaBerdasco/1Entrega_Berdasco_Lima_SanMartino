@@ -3,6 +3,8 @@
 Desarrollo para el curso de Python, institución CoderHouse, camada 41220. 
 Profesor a cargo: Pedro Rojas Gavidia.
 
+![Demonstration web](./sanatorio_San_Martino/app_sanatorio/static/app_sanatorio/assets/img/inicial.gif)
+
 ## Sobre el proyecto
 
 Proyecto elaborado sobre sanatorio ficticio para la consulta de médicos por especialidad, blog con vista de informacion del sanatorio, registro y login de usuarios staff (medicos, personal del sanatorio) y usuarios en general (pacientes). Cada usuario que sea parte del staff podrá realizar, editar y eliminar posteos en el blog, además podrá hacer comentarios sobre otros artículos del blog. El usuario general podrá realizar comentarios en los blogs del sanatorio así como también eliminarlos. 

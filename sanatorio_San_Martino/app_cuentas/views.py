@@ -6,6 +6,7 @@ from django.contrib.auth.views import LogoutView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from app_cuentas.forms import UserRegisterForm, UserUpdateForm, AvatarFormulario
+from app_cuentas.models import Avatar
 
 
 def register(request):
@@ -85,7 +86,7 @@ def editar_perfil(request):
 
 
 def avatar_perfil(request):
-    
+
     if request.method == 'POST':
         form = AvatarFormulario(request.POST, request.FILES)
 
@@ -96,7 +97,13 @@ def avatar_perfil(request):
 
             return redirect(reverse('inicio'))
     else:
-        
         form = AvatarFormulario()
 
         return render(request, "app_cuentas/form_avatar.html", {"form":form})
+
+
+def avatar_eliminar(request):
+    avatar = Avatar.objects.get(usuario = request.user)
+    avatar.delete()
+    
+    return redirect(reverse('avatar'))
