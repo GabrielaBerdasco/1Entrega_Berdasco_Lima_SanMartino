@@ -17,7 +17,7 @@
                 <img src="{{ articulo.imagen.url }}" alt="imagen">
                 <h2>{{ articulo.titulo  }}</h2>
                 <h4>{{ articulo.subtitulo }}</h4>
-                <p>{{ articulo.cuerpo }}</p>
+                <p>{{ articulo.cuerpo | safe }}</p>
                 <h5>{{ articulo.autor }} - {{ articulo.fecha }}</h5>
                 <a href="{% url 'ver_articulo' articulo.id %}">Ver articulo</a>
                 {% if user.is_staff %}

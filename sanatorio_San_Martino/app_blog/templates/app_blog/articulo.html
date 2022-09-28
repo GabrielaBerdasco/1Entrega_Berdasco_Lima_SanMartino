@@ -13,14 +13,14 @@
     <article>
         <img src="{{ articulo.imagen.url }}" alt="imagen">
         <h4>{{ articulo.subtitulo }}</h4>
-        <p>{{ articulo.cuerpo }}</p>
+        <p>{{ articulo.cuerpo | safe }}</p>
         <h5>{{ articulo.autor }} - {{ articulo.fecha }}</h5>
         
         <a href="{% url 'comentario_form' articulo.id %}">Comentar</a>
 
         {% for comentario in comentarios %}
         <div>
-            <p>{{comentario.cuerpo}}</p>
+            <p>{{comentario.cuerpo | safe}}</p>
             <h5>{{comentario.autor}} - {{comentario.fecha}}</h5>
 
             {% if user == comentario.autor %}

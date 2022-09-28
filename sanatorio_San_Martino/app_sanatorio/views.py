@@ -3,8 +3,6 @@ from django.shortcuts import render
 from app_sanatorio.models import Medico
 
 
-
-
 def inicio(request) :
     return render(request, "app_sanatorio/inicio.html")
 

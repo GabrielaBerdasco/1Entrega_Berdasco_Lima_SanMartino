@@ -91,7 +91,7 @@ def avatar_perfil(request):
 
         if form.is_valid:
             avatar = form.save()
-            avatar.user = request.user
+            avatar.usuario = request.user
             avatar.save()
 
             return redirect(reverse('inicio'))
