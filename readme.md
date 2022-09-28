@@ -3,7 +3,17 @@
 Desarrollo para el curso de Python, institución CoderHouse, camada 41220. 
 Profesor a cargo: Pedro Rojas Gavidia.
 
+#### Vista sin loguear
+
 ![Demonstration web](./sanatorio_San_Martino/app_sanatorio/static/app_sanatorio/assets/img/inicial.gif)
+
+#### Vista registro y funcionalidad usuario general
+
+![Demonstration web](./sanatorio_San_Martino/app_sanatorio/static/app_sanatorio/assets/img/usuariogral.gif)
+
+#### Vista registro y funcionalidad usuario staff
+
+![Demonstration web](./sanatorio_San_Martino/app_sanatorio/static/app_sanatorio/assets/img/usuarioStaff.gif)
 
 ## Sobre el proyecto
 
