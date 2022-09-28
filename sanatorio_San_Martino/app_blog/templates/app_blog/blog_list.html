@@ -1,5 +1,16 @@
 {% extends "app_sanatorio/base.html" %}
 
+{% block style_block %}
+<style>
+    .texto-card {
+        height: 10rem;
+        margin-bottom: 15px;
+        white-space: wrap;
+        overflow: hidden;
+    }
+</style>
+{% endblock style_block %}
+
 {% block base %}
 
 <h1 class="fs-1 mt-5 p-5 text-center">BLOG</h1>
@@ -13,20 +24,25 @@
     
     {% if object_list %}
         {% for articulo in object_list %}
-            <article>
-                <img src="{{ articulo.imagen.url }}" alt="imagen">
-                <h2>{{ articulo.titulo  }}</h2>
-                <h4>{{ articulo.subtitulo }}</h4>
-                <p>{{ articulo.cuerpo | safe }}</p>
-                <h5>{{ articulo.autor }} - {{ articulo.fecha }}</h5>
-                <a href="{% url 'ver_articulo' articulo.id %}">Ver articulo</a>
-                {% if user.is_staff %}
-                <a href="{% url 'editar_blog' articulo.id %}">Editar articulo</a>
-                <a href="{% url 'eliminar_blog' articulo.id %}">Eliminar articulo</a>
-                {% endif %}
+            <article class="d-flex flex-row justify-content-center">
+                <a href="{% url 'ver_articulo' articulo.id %}"><img src="{{ articulo.imagen.url }}" alt="imagen"></a>
+                <div class="card bg-dark" style="width: 25rem;">
+                    <div class="card-body">
+                        <h4 class="card-title text-primary">{{ articulo.titulo  }}</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ articulo.subtitulo }}</h6>
+                        <div class="card-text texto-card">{{ articulo.cuerpo | safe }}</div>
+                        <a href="{% url 'ver_articulo' articulo.id %}" class="btn btn-primary p-2">Ver articulo</a>
+                        {% if user.is_staff %}
+                            <a href="{% url 'editar_blog' articulo.id %}" class="card-link">Editar</a>
+                            <a href="{% url 'eliminar_blog' articulo.id %}" class="card-link">Eliminar</a>
+                        {% endif %}
+                        <div class="card-footer bg-transparent text-light mt-3">
+                            {{ articulo.autor }} - {{ articulo.fecha }}
+                        </div>
+                    </div>
+                </div>
             </article>
         {% endfor %}
-    
     {% else %}
             <h3>No hay entradas en el blog.</h3>
     {% endif %}

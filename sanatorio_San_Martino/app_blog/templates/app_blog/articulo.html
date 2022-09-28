@@ -2,38 +2,42 @@
 
 {% block base %}
 
-<h1 class="fs-1 mt-5 p-5 text-center">BLOG</h1>
-<h1 class="fs-2 mt-2 p-1 text-center text-light">{{ articulo.titulo }}</h1>
+<h1 class="fs-1 mt-5 p-5 text-center text-uppercase">{{ articulo.titulo }}</h1>
 
 {% endblock base %}
 
 {% block section %}
 
-<section class="p-1 d-flex flex-column text-light about-section text-center" id="about">  
-    <article>
-        <img src="{{ articulo.imagen.url }}" alt="imagen">
-        <h4>{{ articulo.subtitulo }}</h4>
-        <p>{{ articulo.cuerpo | safe }}</p>
-        <h5>{{ articulo.autor }} - {{ articulo.fecha }}</h5>
+<section class="p-1 text-light about-section">  
+    <article class="container text-center">
+        <div class="row justify-content-md-center">
+            <div class="col-6">
+                <img src="{{ articulo.imagen.url }}" alt="imagen" style="width: 379px; height: 305px;">
+            </div>
+            <div class="col-md-6">
+                <h4 class="p-2">{{ articulo.subtitulo }}</h4>
+                <div class="fs-5">{{articulo.cuerpo | safe}}</div>
+                <h6 class="pt-2">{{ articulo.autor }} - {{ articulo.fecha }}</h6>
+                <a href="{% url 'comentario_form' articulo.id %}">Comentar</a>
+            </div>
+        </div>
+    </article>
         
-        <a href="{% url 'comentario_form' articulo.id %}">Comentar</a>
-
+    <article>
         {% for comentario in comentarios %}
-        <div>
-            <p>{{comentario.cuerpo | safe}}</p>
-            <h5>{{comentario.autor}} - {{comentario.fecha}}</h5>
-
-            {% if user == comentario.autor %}
-
-            <a href="{% url 'eliminar_comentario' comentario.id %}">Eliminar</a>
-            
-            {% endif %}
+        <div class="d-flex flex-column justify-content-around mt-5 mx-5 p-3 border border-primary">
+            {{comentario.cuerpo | safe}}
+            <div class="fs-5 flex-row">
+                <h6 class="pt-2">{{comentario.autor}} - {{comentario.fecha}}</h6>
+                {% if user == comentario.autor %}
+    
+                <a href="{% url 'eliminar_comentario' comentario.id %}">Eliminar</a>
+                
+                {% endif %}
+            </div>
         </div>
         {% endfor %}
-
     </article>
-    
-
 </section>
     
 {% endblock section %}
