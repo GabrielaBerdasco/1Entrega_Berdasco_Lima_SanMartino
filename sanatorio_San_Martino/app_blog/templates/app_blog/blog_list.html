@@ -24,8 +24,8 @@
     
     {% if object_list %}
         {% for articulo in object_list %}
-            <article class="d-flex flex-row justify-content-center">
-                <a href="{% url 'ver_articulo' articulo.id %}"><img src="{{ articulo.imagen.url }}" alt="imagen"></a>
+            <article class="d-flex flex-row justify-content-center mt-4">
+                <a href="{% url 'ver_articulo' articulo.id %}"><img src="{{ articulo.imagen.url }}" alt="imagen" style="width: 25rem; height: 25rem;"></a>
                 <div class="card bg-dark" style="width: 25rem;">
                     <div class="card-body">
                         <h4 class="card-title text-primary">{{ articulo.titulo  }}</h4>
