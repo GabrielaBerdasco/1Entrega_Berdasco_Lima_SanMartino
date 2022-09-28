@@ -11,7 +11,7 @@ Profesor a cargo: Pedro Rojas Gavidia.
 
 ![Demonstration web](./sanatorio_San_Martino/app_sanatorio/static/app_sanatorio/assets/img/usuariogral.gif)
 
-#### Vista registro y funcionalidad usuario staff
+#### Vista funcionalidad usuario staff
 
 ![Demonstration web](./sanatorio_San_Martino/app_sanatorio/static/app_sanatorio/assets/img/usuarioStaff.gif)
 
