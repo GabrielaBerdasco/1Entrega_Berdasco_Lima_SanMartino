@@ -3,7 +3,9 @@
 Desarrollo para el curso de Python, institución CoderHouse, camada 41220. 
 Profesor a cargo: Pedro Rojas Gavidia.
 
-**Nota importante:** Para las variables de ambiente se utilizó python-dotenv por lo que, para correr el código, es necesario crear un archivo .env dentro de la carpeta sanatorio_San_Martino, donde se encuentra el archivo settings.py, con variable SECRET_KEY_ENV que contenga secret_key de Django.
+**Nota importante:** 
+1. Versión de Python 3.10.6
+2. Para las variables de ambiente se utilizó python-dotenv, por lo que para correr el código es necesario crear un archivo .env dentro de la carpeta sanatorio_San_Martino, donde se encuentra el archivo settings.py, con variable SECRET_KEY_ENV que contenga secret_key de Django.
 
 #### Vista sin loguear
 
