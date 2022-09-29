@@ -49,8 +49,11 @@ class BlogTestCase(TestCase):
         print(comentario_prueba)
 
         self.assertIsNotNone(comentario1.id) 
+        self.assertIsNotNone(comentario1.articulo) 
+        self.assertIsNotNone(comentario1.autor) 
         self.assertEqual(comentario1.cuerpo, comentario_prueba)
-
+        self.assertEqual(comentario1.articulo, articulo)
+        self.assertEqual(comentario1.autor, usuario)
 
 
 
