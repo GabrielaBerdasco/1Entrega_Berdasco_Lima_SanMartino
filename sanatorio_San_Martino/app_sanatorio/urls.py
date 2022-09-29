@@ -10,6 +10,7 @@ urlpatterns = [
     path('', views.inicio, name = "inicio"),
     path('about/', views.nosotros, name = "nosotros"),
     path('consulta/', views.busquedaEspecialidad, name= "consulta"),
+    path('carga-medicos/', views.medicos_formulario, name = "carga_medicos"),
     path('buscar/', views.buscar, name = "buscar"),
 ]
 

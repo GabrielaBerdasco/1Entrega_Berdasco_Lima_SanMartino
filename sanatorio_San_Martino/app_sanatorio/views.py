@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 from app_sanatorio.models import Medico
+from app_sanatorio.forms import MedicoFormulario
 
 
 def inicio(request) :
@@ -26,3 +27,20 @@ def buscar(request) :
     else:
 
         return render(request, "app_sanatorio/consulta.html", {"medico": []})
+
+
+def medicos_formulario(request):
+
+    if request.method == 'POST':
+            formulario = MedicoFormulario(request.POST)
+
+            if formulario.is_valid():
+                  data = formulario.cleaned_data
+                  medico = Medico(nombre=data['nombre'], apellido=data['apellido'], especialidad=data['especialidad'], email=data['email'])
+                  medico.save()
+
+                  return render(request, "app_sanatorio/inicio.html", {"exitoso": True})
+    else:  
+            formulario= MedicoFormulario()  
+            
+    return render(request, "app_sanatorio/cargar_datos.html", {"formulario": formulario})

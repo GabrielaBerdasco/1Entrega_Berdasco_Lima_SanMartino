@@ -1,35 +1,28 @@
 import random
-from re import sub 
 import string
 
 from django.test import TestCase
-from app_blog.models import Blog, Comentario
 
-class BlogTestCase(TestCase):
+from app_sanatorio.models import Medico
+
+class MedicoTestCase(TestCase):
     pass
 
-
-    def test_creacion_entrada(self) :
-        lista_letras_titulo = [random.choice(string.ascii_letters + string.digits) for _ in range(20)]
-        lista_letra_subtitulo = [random.choice(string.ascii_letters + string.digits) for _ in range(20)]
-        lista_letra_cuerpo = [random.choice(string.ascii_letters + string.digits) for _ in range(50)]
-        titulo_prueba = " ".join(lista_letras_titulo)
-        subtitulo_prueba = " ".join(lista_letras_titulo)
-        cuerpo_prueba = " ".join(lista_letras_titulo)
-        blog1 = Blog.objects.create(titulo = titulo_prueba, subtitulo = subtitulo_prueba,cuerpo = cuerpo_prueba)
-
-        self.assertIsNotNone(blog1.id) 
-        self.assertEqual(blog1.titulo, titulo_prueba)
-        self.assertEqual(blog1.subtitulo,subtitulo_prueba)
-        self.assertEqual(blog1.cuerpo, cuerpo_prueba)
+    def test_creacion_medico(self):
+        # Test 1: Comprueba que se pueda crear un médico con letras y número al azar.
+            lista_letra_nombre = [random.choice(string.ascii_letters + string.digits) for _ in range(20)]
+            lista_letra_apellido = [random.choice(string.ascii_letters + string.digits) for _ in range(20)]
+            lista_letra_especialidad = [random.choice(string.ascii_letters + string.digits) for _ in range(50)]
+            nombre_prueba = "".join(lista_letra_nombre)
+            apellido_prueba = "".join(lista_letra_apellido)
+            especialidad_prueba = "".join(lista_letra_especialidad)
+            medico = Medico.objects.create(nombre = nombre_prueba, apellido = apellido_prueba, especialidad = especialidad_prueba)
+            print(nombre_prueba)
+            print(apellido_prueba)
+            print(especialidad_prueba)
 
 
-    def test_creacion_comentario(self) :
-        lista_letra_comentario = [random.choice(string.ascii_letters + string.digits) for _ in range(50)]
-        comentario_prueba = " ".join(lista_letra_comentario)
-        comentario1 = Comentario.objects.create(comentario = comentario_prueba)
-        
-        self.assertIsNotNone(comentario1.id) 
-        self.assertEqual(comentario1.titulo, comentario_prueba)
-
-
+            self.assertIsNotNone(medico.id) 
+            self.assertEqual(medico.nombre, nombre_prueba)
+            self.assertEqual(medico.apellido,apellido_prueba)
+            self.assertEqual(medico.especialidad, especialidad_prueba)
